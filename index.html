@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web</title>
+   
+</head>
+<body>
+    <center>
+        <h1>Welcome To Digidigital</h1>
+    <form action="https://sheetdb.io/api/v1/d93yi21f6uh1a" method="post" id="sheetdb-form">
+      <label>Name: </label><input type="text" name="data[name]"><br><br>
+      <label>Email: </label><input type="text" name="data[email]"><br><br>
+      <label>Phone No: </label><input type="number" name="data[phone]"><br><br>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+</center>
+<script>
+    var form = document.getElementById('sheetdb-form');
+            form.addEventListener("submit", e => {
+              e.preventDefault();
+              fetch(form.action, {
+                  method : "POST",
+                  body: new FormData(document.getElementById("sheetdb-form")),
+              }).then(
+                  response => response.json()
+              ).then((html) => {
+    
+                document.getElementById("sheetdb-form").reset();
+                alert("Thanks for Contacting us..! We Will Contact You Soon...")
+                //new page open on submit
+                //window.open('th.html', '_blank');
+    
+              });
+            });
+
+     
+    
+        </script>
+   
+</body>
+</html>
